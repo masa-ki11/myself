@@ -1,0 +1,15 @@
+.wrapper
+  .header
+    .picture
+      = image_tag src="/assets/header.jpg", size: ""
+  .main
+    
+    .user_list
+      .icon_btn
+        = icon('fas', 'angle-double-down')
+        = link_to "", class: "hidden" do
+          = icon('fas', 'comment')
+        = link_to edit_user_path(current_user), class: "hidden" do
+          = icon('fas', 'address-book')
+          
+      
