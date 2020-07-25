@@ -4,12 +4,20 @@
       = image_tag src="/assets/header.jpg", size: ""
   .main
     
-    .user_list
+    .menu_list
       .icon_btn
         = icon('fas', 'angle-double-down')
         = link_to "", class: "hidden" do
           = icon('fas', 'comment')
         = link_to edit_user_path(current_user), class: "hidden" do
           = icon('fas', 'address-book')
-          
+            
+      .user_list
+        .name
+          = link_to current_user.name
+          .comment
+            = current_user.comment
+        
+        
+        
       
