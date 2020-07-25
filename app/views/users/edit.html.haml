@@ -16,4 +16,14 @@
           = f.label :email
         .FormField__input--normal
           = f.email_field :email
+      .FormField
+        .FormField__label--normal
+          = f.label :comment
+        .FormField__input--normal
+          = f.text_field :comment
+      .FormField
+        .FormField__label--normal
+          = f.label :image
+        .FormField__input--normal
+          = f.file_field :image
       = f.submit "Update", class: 'Button UserButton'

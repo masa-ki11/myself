@@ -27,5 +27,15 @@
           = f.label :password_confirmation
         .FormField__input--normal
           = f.password_field :password_confirmation, autocomplete: "off"
+      .FormField
+        .FormField__label--normal
+          = f.label :comment
+        .FormField__input--normal
+          = f.text_field :comment
+      .FormField
+        .FormField__label--normal
+          = f.label :image
+        .FormField__input--normal
+          = f.file_field :image
       .actions
         = f.submit "Create Account", class: 'Button UserButton'
