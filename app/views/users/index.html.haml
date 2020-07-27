@@ -14,10 +14,9 @@
             
       .user_list
         .name
-          = link_to current_user.name
-          .comment
-            = current_user.comment
-        
-        
-        
-      
+          - @user.each do |user|
+            = link_to user.name, user
+            .user_picture
+              = image_tag user.image.url
+            .comment
+              = user.comment
