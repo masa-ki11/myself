@@ -1,6 +1,8 @@
 .profile
-プロフィール
+  プロフィール
 .acount_name
-  = current_user.name
-.acount_img
-  = image_tag current_user.image.url
+  = @user.name
+  .acount_img
+    = image_tag @user.image.url
+  .acount_comment
+    = @user.comment
