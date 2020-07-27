@@ -6,6 +6,7 @@
 }
 a {
   text-decoration: none;
+  color: white;
 }
 
 .header {
@@ -24,7 +25,6 @@ a {
   .menu_list {
     background-color: #222222;
     background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
-    height: 100vh;
     width: calc(100vw - 200px);
     margin-left: 100px;
   }
@@ -50,15 +50,24 @@ a {
 
     .user_list {
       color: bisque;
-      padding: 50px 0 0 100px;
-      display: flex;
-      justify-content: space-between;
+      padding: 20px 0 0 100px;
       
+      word-wrap: break-word;
       .name {
         font-size: 30px;
-        padding: 50px 50px 0 0;
-
+        padding: 50px 50px 0 20px;
+        .user_picture img{
+          width: 100px; 
+        }
+      .comment {
+        margin-bottom: 30px;
+        width: fit-content;
+        background: white;
+        border-radius: 10px;
+        color: black;
+        font-size: 20px;
+        word-wrap: break-word;
       }
-
-    }
+      }  
+    } 
 }
