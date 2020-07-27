@@ -1,0 +1,22 @@
+.profile {
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(rgb(172, 176, 196), #628dea);
+  text-align: center;
+  font-size: 40px;
+  font-family: monospace,sans-serif;
+}
+.acount_name {
+  text-align: center;
+  font-size: 30px;
+  height: 40px;
+
+  .acount_img img{
+    width: 400px;
+    
+  }
+
+  .acount_comment {
+
+  }
+}

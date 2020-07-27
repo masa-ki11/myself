@@ -15,8 +15,10 @@
       .user_list
         .name
           - @user.each do |user|
-            = link_to user.name, user
-            .user_picture
-              = image_tag user.image.url
-            .comment
-              = user.comment
+            - if current_user.name != user.name
+              = link_to user_path(user) do
+                = user.name
+              .user_picture
+                = image_tag user.image.url
+              .comment
+                = user.comment
