@@ -6,8 +6,12 @@
     = image_tag @user.image.url
   .acount_comment
     = @user.comment
+    - if current_user.following?(@user)
+      = form_with(model: current_user.relationships.find_by(follow_id: @user.id), local: true, method: :delete, remote: true) do |f|
+        = hidden_field_tag :follow_id, @user.id
+        = f.submit 'like解除', class: 'btn btn-danger'
     = form_with model: current_user.relationships.build, local: true, remote: true do |f|
       = hidden_field_tag :follow_id, @user.id
       = f.submit 'like!', class: 'btn btn-primary'
-        - if current_user.following?(@user)
+        
 				
