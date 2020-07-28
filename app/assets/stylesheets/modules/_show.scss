@@ -1,15 +1,18 @@
 .profile {
   height: 80px;
   width: 100%;
-  background: linear-gradient(rgb(172, 176, 196), #628dea);
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
   text-align: center;
   font-size: 40px;
   font-family: monospace,sans-serif;
+  color: white;
 }
 .acount_name {
   text-align: center;
   font-size: 30px;
-  height: 40px;
+  height: calc(100vh - 80px);
+  background-color: black;
+  color: white;
 
   .acount_img img{
     width: 400px;
