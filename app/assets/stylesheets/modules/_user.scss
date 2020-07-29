@@ -40,17 +40,15 @@ a {
       
       .hidden{
         display: block;
-        color: #fff;
       }
     }
     .hidden{
-      display: block;
       display: none;
     }
 
     .user_list {
       color: bisque;
-      padding: 20px 0 0 100px;
+      padding: 20px 0 30px 100px;
       
       word-wrap: break-word;
       .name {
@@ -66,6 +64,7 @@ a {
         color: black;
         font-size: 15px;
         word-wrap: break-word;
+        
       }
       }  
     } 
