@@ -28,8 +28,8 @@ class User < ApplicationRecord
           self.followings.include?(other_user)
         end
 
-        def matchers
-          following & followers
+        def matchers(relationship)
+          followings & followers
         end
   mount_uploader :image, ImageUploader
 end
