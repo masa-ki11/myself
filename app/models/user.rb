@@ -27,9 +27,13 @@ class User < ApplicationRecord
         def following?(other_user)
           self.followings.include?(other_user)
         end
-
-        def matchers(relationship)
-          followings & followers
+        def followers?(other_user)
+          self.followers.include?(other_user)
+        end
+        
+        def matchers
+          User.where(id: reverses_of_relationship.select(:follower_id))
+          .where(id: relationships.select(:following_id))
         end
   mount_uploader :image, ImageUploader
 end
