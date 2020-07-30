@@ -10,7 +10,9 @@
     .match_name
       - @user.each do |user|
         - if current_user.followers?(user) && current_user.following?(user)
-          = user.name
+          = form_with model: @room, local: true do |f|
+            
+            = f.submit user.name 
         .picture
           - if current_user.followers?(user) && current_user.following?(user)
             = image_tag user.image.url

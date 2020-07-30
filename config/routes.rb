@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
 
-  resources :rooms, only: [:show]
+  resources :rooms, only: [:show, :create, :new]
+    post 'rooms/:id' => 'rooms#create'
+
+  resources :chat, only: [:create]
 end
