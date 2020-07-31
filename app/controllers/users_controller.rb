@@ -23,7 +23,24 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @relationship = Relationship.new
 
-    
+    if user_signed_in?
+      @currentUserEntry = UserRoom.where(user_id: current_user.id)
+      @userEntry = UserRoom.where(user_id: @user.id)
+      
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id
+            @haveRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+          unless @haveRoom
+            @room = Room.new
+            @entry = UserRoom.new
+          end
+        
+    end
   end
 
   def followings
