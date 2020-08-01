@@ -1,22 +1,24 @@
 class RoomsController < ApplicationController
   
   def index
-    @rooms = current_user.rooms.includes(:chats).order("comment.created_at desc")
 
+    @user = User.all
+    @relationship = Relationship.all
+    
+  end
+  
+  def show
+    @user = User.all
+    @rooms = current_user.rooms.includes(:chats).order("comment.created_at desc")
+    
     @room = Room.find(params[:id])
     if UserRoom.where(user_id: current_user.id, room_id: @room.id).present?
-      @chat = @room.chats.includes(:user).order("created_at asc")
+      @chats = @room.chats.includes(:user).order("created_at asc")
       @chat = Chat.new
       @user_room = @room.user_rooms
     else
       redirect_back(fallback_location: root_path)
     end
-end
-  
-  def show
-    @user = User.all
-    @relationship = Relationship.all
-    
     
   end
 
