@@ -15,5 +15,3 @@
         .picture
           - if current_user.followers?(user) && current_user.following?(user)
             = image_tag user.image.url
-  = render "chats/index"
-        

@@ -7,7 +7,7 @@
     .menu_list
       .icon_btn
         = icon('fas', 'angle-double-down')
-        = link_to room_path(current_user), class: "hidden" do
+        = link_to rooms_path, class: "hidden" do
           = icon('fas', 'comment')
         = link_to edit_user_path(current_user), class: "hidden" do
           = icon('fas', 'address-book')

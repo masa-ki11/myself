@@ -1,16 +1,18 @@
 class ChatsController < ApplicationController
   before_action :set_room, only: [:create, :edit, :update, :destroy]
-  before_action :set_message, only: [:edit, :update, :destroy]
+  before_action :set_chat, only: [:edit, :update, :destroy]
 
+  def index
+    @chat = Chat.new
+    @chat = @room.chat.includes(:user)
+  end
   def create
     if UserRoom.where(user_id: current_user.id, room_id: @room.id)
-        @comment = Chat.create(chat_params)
-            if @comment.save
-                @comment = Chat.new
-                gets_user_rooms_all_comments
-            end
-    else
-        flash[:alert] = "メッセージの送信に失敗しました"
+        @chat = @room.chat.create(chat_params)
+        if @chat.save
+          @chat = Chat.new
+          gets_user_rooms_all_comments
+      end
     end
   end
 
@@ -36,12 +38,12 @@ class ChatsController < ApplicationController
         @room = Room.find(params[:chat][:room_id])
     end
 
-    def set_message
-        @comment = Chat.find(params[:id])
+    def set_chat
+        @chat = Chat.find(params[:id])
     end
 
     def gets_user_rooms_all_comments
-        @comment = @room.comment.includes(:user).order("created_at asc")
+        @chat = @room.chat.includes(:user).order("created_at asc")
         @user_room = @room.user_room
     end
 
