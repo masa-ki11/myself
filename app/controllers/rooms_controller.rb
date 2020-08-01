@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   def show
     @user = User.all
     @rooms = current_user.rooms.includes(:chats).order("comment.created_at desc")
-    
+    @roomId = UserRoom.where(user_id: current_user.id)
     @room = Room.find(params[:id])
     if UserRoom.where(user_id: current_user.id, room_id: @room.id).present?
       @chats = @room.chats.includes(:user).order("created_at asc")

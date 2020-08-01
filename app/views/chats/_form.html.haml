@@ -1,0 +1,6 @@
+- if user_signed_in?
+  = form_with model: [@room, @chat], html: {class: "Form"}, local: true do |form| 
+    = form.text_area :comment, class: 'textarea'
+    = form.submit value: "送信"
+- else
+  コメントの投稿にはログインが必要です。
