@@ -8,7 +8,7 @@ class ChatsController < ApplicationController
   end
   def create
     if UserRoom.where(user_id: current_user.id, room_id: @room.id)
-        @chat = @room.chat.create(chat_params)
+        @chat = @room.chats.create(chat_params)
         if @chat.save
           @chat = Chat.new
           gets_user_rooms_all_comments
@@ -35,7 +35,7 @@ class ChatsController < ApplicationController
 
 
     def set_room
-        @room = Room.find(params[:chat][:room_id])
+        @room = Room.find(params[:room_id])
     end
 
     def set_chat
@@ -43,8 +43,8 @@ class ChatsController < ApplicationController
     end
 
     def gets_user_rooms_all_comments
-        @chat = @room.chat.includes(:user).order("created_at asc")
-        @user_room = @room.user_room
+        @chat = @room.chats.includes(:user).order("created_at asc")
+        @user_rooms = @room.user_rooms
     end
 
     def chat_params

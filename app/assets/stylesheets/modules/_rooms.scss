@@ -43,6 +43,7 @@
   .room {
     width: calc(100% - 300px);
     .talk_room {
+      overflow: scroll;
       width: 700px;
       height: 100vh;
       background-color: rgb(239, 248, 252);
@@ -51,6 +52,14 @@
       .talk {
         padding: 50px 0 0 50px;
         color: gray;
+      }
+      .Form {
+        position: fixed;
+        bottom: 5px;
+        left: 620px;
+        .textarea {
+          width: 500px;
+        }
       }
     }
   }
