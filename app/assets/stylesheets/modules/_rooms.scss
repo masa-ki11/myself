@@ -22,7 +22,7 @@
 }
 .room_field {
   display: flex;
-  height: 900px;
+  height: 950px;
   .side {
     width: 300px;
     height: 100%;
@@ -49,9 +49,13 @@
       background-color: rgb(239, 248, 252);
       margin: 50px 0 0 220px;
       border-radius: 40px;
+      padding-bottom: 50px;
       .talk {
         padding: 50px 0 0 50px;
         color: gray;
+        .talk_info {
+          padding-bottom: 20px;
+        }
       }
       .Form {
         position: fixed;
