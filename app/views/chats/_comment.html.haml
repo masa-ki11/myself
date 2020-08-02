@@ -1,7 +1,8 @@
 - @chats.each do |chat|
-  %div{id: "chat_#{chat.id}"}
-    = chat.user.name
-    = chat.updated_at.strftime("%Y-%m-%d %H:%M")
-    = chat.comment
-  .list-inline-item
+  .talk_info{data: {chat: {id: chat.id}}}
+    .name
+      = chat.user.name
+      = chat.created_at.strftime("%Y-%m-%d %H:%M")
+    .chat_comment
+      = chat.comment
     
