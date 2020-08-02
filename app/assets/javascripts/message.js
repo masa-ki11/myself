@@ -7,9 +7,9 @@ $(function(){
             ${chat.user_name}
             ${chat.created_at}
           </div>
-        </div>
-        <div class="chat_comment">
+          <div class="chat_comment">
           ${chat.comment}
+          </div>
         </div>`
       return html;
     };
@@ -33,8 +33,12 @@ $(function(){
         let html = buildHTML(comment);
         $('.comment_field').append(html);
         $('form')[0].reset();
+        $('.talk_room').animate({ scrollTop: $('.talk_room')[0].scrollHeight});
         $('.submit-btn').prop('disabled', false);
       })
     });
+  });
+  $(window).on('load', function() {
+    $('.talk_room').animate({ scrollTop: $('.talk_room')[0].scrollHeight});
   });
 })
