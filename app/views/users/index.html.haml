@@ -19,7 +19,8 @@
               = link_to user_path(user) do
                 = user.name
               .user_picture
-                = image_tag user.image.url
+                = link_to user.image.url, 'data-lightbox': user.image do
+                  #{image_tag user.image.url}
               .comment
                 = user.comment
         = paginate @user
