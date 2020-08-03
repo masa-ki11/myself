@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :rooms, only: [:index, :show, :create, :new] do
     post 'rooms/:id' => 'rooms#create'
-    resources :chats, only: [:create]
+    resources :chats, only: [:create, :destroy]
     
   end
 end

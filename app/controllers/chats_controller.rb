@@ -28,7 +28,7 @@ class ChatsController < ApplicationController
   end
 
   def destroy
-    if @comment.destroy
+    if @chat.destroy
         gets_user_rooms_all_comments
     end
   end
