@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all.page(params[:page]).per(10)
+    @user = User.all.order("RAND()").page(params[:page]).per(10)
   end
 
   def edit

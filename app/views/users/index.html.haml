@@ -23,4 +23,7 @@
                   #{image_tag user.image.url}
               .comment
                 = user.comment
-        = paginate @user
+          = paginate @user
+        .twitter
+          %a.twitter-timeline{"data-height" => "1500", "data-theme" => "dark", "data-width" => "600", href: "https://twitter.com/masa_kino/lists/list1?ref_src=twsrc%5Etfw"} A Twitter List by masa_kino
+          %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}

@@ -18,7 +18,7 @@ a {
 
 .main {
   background: linear-gradient(gray, #f3eded);
-  height: 100vh;
+  height: 1000px;
   width: 100%;
   overflow-y: scroll;
 
@@ -45,12 +45,12 @@ a {
     .hidden{
       display: none;
     }
-
+    
     .user_list {
       color: bisque;
       padding: 20px 0 30px 100px;
-      
       word-wrap: break-word;
+      display: flex;
       .name {
         font-size: 30px;
         padding: 50px 50px 0 20px;
@@ -64,6 +64,9 @@ a {
         word-wrap: break-word;
         
       }
-      }  
+      }
+      .twitter {
+        margin: 40px auto;
+      } 
     } 
 }
