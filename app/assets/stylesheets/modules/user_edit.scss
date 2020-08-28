@@ -1,13 +1,18 @@
+.All {
+  width: 100vw;
+  height: 1000px;
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+}
 .AccountPage {
   width: 980px;
-  margin: 60px auto;
-  padding: 60px;
-  background-color: #fff;
+  margin: 0 auto;
+  padding: 60px ;
+  background: linear-gradient(gray, #f3eded);
   border: 1px solid #ddd;
   border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
+  
 }
+
 .AccountPage__title {
   width: 50%;
   font-size: 14px;
