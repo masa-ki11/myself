@@ -65,6 +65,7 @@ gem 'jquery-rails'
 gem 'uglifier'
 gem 'kaminari'
 gem 'fog-aws'
+gem 'dotenv-rails'
 group :production do
   gem 'unicorn', '5.4.1'
 end
