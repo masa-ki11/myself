@@ -18,10 +18,9 @@ a {
 
 .main {
   background: linear-gradient(gray, #f3eded);
-  height: 1000px;
+  height: auto;
   width: 100%;
-  overflow-y: scroll;
-
+  
   .menu_list {
     background-color: #222222;
     background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
@@ -68,5 +67,12 @@ a {
       .twitter {
         margin: 40px auto;
       } 
-    } 
+    }
+}
+
+.footer img{
+  
+  height: 500px;
+  width: 100vw;
+  object-fit: cover;
 }
