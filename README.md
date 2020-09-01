@@ -10,6 +10,10 @@
 - 相互フォローでトークルーム作成可能(DM)
 - トップページユーザー画像選択で画像拡大
 
+## 本番環境
+- https://myself827.herokuapp.com/
+- テストアカウント：test５@gmail.com / pass: 55555555
+
 ## 制作意図
 - 自身の趣味であるフェス参戦において、一人での参加者を多く見かけることがあり、また、自身も一人での参加をすることがあるが、現地で仲間ができ楽しく参加することができた経験から制作。
 
@@ -85,5 +89,5 @@
 |follow_id|references|null: false, foreign_key: true|
 
 ### association
-belongs_to :user
-belongs_to :follow, class_name: 'User'
+- belongs_to :user
+- belongs_to :follow, class_name: 'User'
