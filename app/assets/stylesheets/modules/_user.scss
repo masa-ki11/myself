@@ -69,10 +69,21 @@ a {
       } 
     }
 }
-
+.footer {
+  position: relative;
+}
 .footer img{
   
   height: 500px;
   width: 100vw;
   object-fit: cover;
+  
+}
+.text {
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  font-size: 40px;
+  color: white;
+  
 }
